@@ -7,6 +7,7 @@ use App\Mcp\Tools\CurrentWeatherTool;
 use Laravel\Mcp\Server\Tools\Annotations\IsIdempotent;
 use Laravel\Mcp\Server\Tools\Annotations\IsReadOnly;
 use App\Mcp\Prompts\DescribeWeatherPrompt;
+use App\Mcp\Resources\WeatherGuidelinesResource;
 
 #[IsIdempotent]
 #[IsReadOnly]
@@ -35,7 +36,7 @@ class WeatherServer extends Server
      * @var array<int, class-string<\Laravel\Mcp\Server\Tool>>
      */
     protected array $tools = [
-        // CurrentWeatherTool::class
+        CurrentWeatherTool::class
     ];
 
     /**
@@ -44,7 +45,7 @@ class WeatherServer extends Server
      * @var array<int, class-string<\Laravel\Mcp\Server\Resource>>
      */
     protected array $resources = [
-        // WeatherGuidelinesResource::class
+        WeatherGuidelinesResource::class
     ];
 
     /**
